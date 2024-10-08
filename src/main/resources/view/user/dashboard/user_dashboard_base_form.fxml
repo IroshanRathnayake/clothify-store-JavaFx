@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.user.UserDashboardBaseFormController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menubarLogoutOnAction" text="Logout" />
+                  <MenuItem id="menubarClose" mnemonicParsing="false" onAction="#menubarCloseOnAction" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Info" />
+            <Menu mnemonicParsing="false" text="Contact" />
+            <Menu mnemonicParsing="false" text="Help" />
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <AnchorPane prefHeight="975.0" prefWidth="247.0" style="-fx-background-color: #ffffff;" styleClass="leftBar" stylesheets="@../../../css/anchor-pane.css" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnDashboard" layoutX="31.0" layoutY="107.0" onAction="#btnDashboardOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" stylesheets="@../../../css/button.css" text="Dashboard" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/icon/dashboard-icon/Content.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnPlaceOrder" layoutX="31.0" layoutY="187.0" onAction="#btnPlaceOrderOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Place Order" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icon/dashboard-icon/Create%20Order.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnCustomer" layoutX="30.0" layoutY="264.0" onAction="#btnCustomerOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Customer" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icon/dashboard-icon/Search%20Client.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnProduct" layoutX="31.0" layoutY="341.0" onAction="#btnProductOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Product" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icon/dashboard-icon/Open%20Box.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnInventory" layoutX="31.0" layoutY="421.0" onAction="#btnInventoryOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Inventory" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icon/dashboard-icon/Sell%20Stock.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnOrders" layoutX="28.0" layoutY="504.0" onAction="#btnOrdersOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Orders" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icon/dashboard-icon/Purchase%20Order.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </JFXButton>
+            <Line endX="104.66664123535156" layoutX="124.0" layoutY="744.0" opacity="0.5" startX="-100.66666412353516" />
+            <JFXButton fx:id="btnSettings" layoutX="33.0" layoutY="778.0" onAction="#btnSettingsOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Settings" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/icon/dashboard-icon/Settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnLogout" layoutX="33.0" layoutY="861.0" onAction="#btnLogoutOnAction" opacity="0.9" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Logout" textFill="#e4483e">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/icon/dashboard-icon/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

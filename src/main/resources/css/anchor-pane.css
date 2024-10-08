@@ -1,0 +1,12 @@
+.leftBar{
+    -fx-background-radius: 0 20px 20px 0;
+}
+
+.navBar{
+    -fx-background-radius: 50px;
+}
+
+.highlight-card{
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="975.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
+   <children>
+      <AnchorPane layoutX="31.0" layoutY="33.0" prefHeight="53.0" prefWidth="1293.0" style="-fx-background-color: #ffffff;" styleClass="navBar" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <Label layoutX="25.0" layoutY="15.0" text="Welcome to Clothify, Admin" textFill="#308edf">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1170.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/icon/dashboard-icon/Alarm.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1220.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icon/dashboard-icon/Ellipse%201.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="52.0" layoutY="107.0" opacity="0.83" style="-fx-font-weight: 700;" text="Place Order">
+         <font>
+            <Font name="Verdana" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="1191.0" layoutY="127.0" opacity="0.5" text="Home / Place Order">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

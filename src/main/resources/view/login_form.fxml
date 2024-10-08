@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="834.0" prefWidth="1257.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="834.0" fitWidth="792.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Left%20Panel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="650.0" fitWidth="638.0" layoutX="93.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Hero-Img.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="285.0" layoutX="877.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="heading" layoutX="807.0" layoutY="180.0" opacity="0.72" style="-fx-font-weight: 800;" text="Login">
+         <font>
+            <Font name="Bahnschrift" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="806.0" layoutY="252.0" opacity="0.5" stylesheets="@../css/font.css" text="A user-friendly POS system for managing sales, inventory, ">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="806.0" layoutY="277.0" opacity="0.5" text="and customer orders efficiently in the clothing store.">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmail" focusColor="#308edf" layoutX="810.0" layoutY="392.0" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="john@email.com" style="-fx-background-color: #dcf2ff;">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" focusColor="#308edf" layoutX="814.0" layoutY="496.0" onAction="#txtPasswordOnAction" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="******" style="-fx-background-color: #dcf2ff;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="Ebrima" size="12.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXPasswordField>
+      <Label layoutX="807.0" layoutY="361.0" opacity="0.87" text="Email">
+         <font>
+            <Font name="Ebrima" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="808.0" layoutY="469.0" opacity="0.87" text="Password">
+         <font>
+            <Font name="Ebrima" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSignIn" layoutX="1073.0" layoutY="589.0" onAction="#btnSignInOnAction" prefHeight="45.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="814.0" layoutY="602.0" onDragDetected="#txtForgotPasswordOnAction" opacity="0.75" text="Forgot Password ?" textFill="#308edf">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="897.0" layoutY="765.0" opacity="0.5" text="Copywrite © 2024 Clothify Store ">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
