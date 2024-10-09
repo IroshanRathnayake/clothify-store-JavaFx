@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -11,40 +10,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="975.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
+<AnchorPane prefHeight="895.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
    <children>
-      <AnchorPane layoutX="31.0" layoutY="33.0" prefHeight="53.0" prefWidth="1293.0" style="-fx-background-color: #ffffff;" styleClass="navBar" stylesheets="@../../../css/anchor-pane.css">
-         <children>
-            <Label layoutX="25.0" layoutY="15.0" text="Welcome to Clothify, Admin" textFill="#308edf">
-               <font>
-                  <Font name="Segoe UI Semibold" size="16.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1170.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/icon/dashboard-icon/Alarm.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1220.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/icon/dashboard-icon/Ellipse%201.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-         </children></AnchorPane>
-      <Label layoutX="52.0" layoutY="107.0" opacity="0.83" style="-fx-font-weight: 700;" text="Dashboard">
+      <Label layoutX="39.0" layoutY="13.0" opacity="0.83" style="-fx-font-weight: 700;" styleClass="dashboard-heading-font" stylesheets="@../../../css/font.css" text="Dashboard">
          <font>
             <Font name="Verdana" size="31.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="63.0" layoutY="174.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="50.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Today">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Today">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
@@ -54,7 +29,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/Estimate.png" />
                </image>
             </ImageView>
-            <Label layoutX="23.0" layoutY="107.0" opacity="0.9" text="28530.00">
+            <Label layoutX="23.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="28530.00">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -64,9 +39,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="383.0" layoutY="174.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="370.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Stocks">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Stocks">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
@@ -76,7 +51,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/Warehouse.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" text="432">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="432">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -86,9 +61,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="702.0" layoutY="174.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="689.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Customers">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Customers">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
@@ -98,7 +73,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/People.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" text="1256">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="1256">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -108,9 +83,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1024.0" layoutY="174.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="1011.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Employees">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Employees">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
@@ -120,7 +95,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/Member.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" text="37">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="37">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -130,9 +105,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="63.0" layoutY="423.0" prefHeight="530.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="50.0" layoutY="329.0" prefHeight="530.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Monthly Sales">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Monthly Sales">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
@@ -147,25 +122,25 @@
             </AreaChart>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="702.0" layoutY="423.0" prefHeight="251.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="689.0" layoutY="329.0" prefHeight="251.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Trending Today">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Trending Today">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="702.0" layoutY="704.0" prefHeight="251.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="689.0" layoutY="610.0" prefHeight="251.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
-            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" text="Best Perfomance">
+            <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Best Perfomance">
                <font>
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="1187.0" layoutY="117.0" opacity="0.5" text="Home / Dashboard">
+      <Label layoutX="1178.0" layoutY="23.0" opacity="0.5" styleClass="path-font" stylesheets="@../../../css/font.css" text="Home / Dashboard">
          <font>
             <Font name="Segoe UI Semibold" size="13.0" />
          </font>

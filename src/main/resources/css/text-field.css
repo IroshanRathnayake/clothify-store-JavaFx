@@ -1,0 +1,11 @@
+.searchbar{
+    -fx-border-insets: 0 0 0 0;
+    -fx-background-radius: 50px;
+    -fx-background-color: #ffffff;
+}
+
+.customer-details{
+    -fx-border-insets: 0 0 0 0;
+    -fx-background-radius: 10px;
+    -fx-background-color: #F1F1F1;
+}

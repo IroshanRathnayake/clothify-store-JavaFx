@@ -1,48 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="975.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
+<AnchorPane minHeight="895.0" minWidth="1309.0" prefHeight="895.0" prefWidth="1340.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
    <children>
-      <AnchorPane layoutX="31.0" layoutY="33.0" prefHeight="53.0" prefWidth="1293.0" style="-fx-background-color: #ffffff;" styleClass="navBar" stylesheets="@../../../css/anchor-pane.css">
-         <children>
-            <Label layoutX="25.0" layoutY="15.0" text="Welcome to Clothify, Admin" textFill="#308edf">
-               <font>
-                  <Font name="Segoe UI Semibold" size="16.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1170.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/icon/dashboard-icon/Alarm.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1220.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../img/icon/dashboard-icon/Ellipse%201.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Label layoutX="52.0" layoutY="107.0" opacity="0.83" style="-fx-font-weight: 700;" text="Place Order">
+      <Label layoutX="38.0" layoutY="11.0" opacity="0.83" styleClass="dashboard-heading-font" stylesheets="@../../../css/font.css" text="Place Order">
          <font>
             <Font name="Verdana" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="1191.0" layoutY="127.0" opacity="0.5" text="Home / Place Order">
+      <Label layoutX="1178.0" layoutY="23.0" opacity="0.5" styleClass="path-font" stylesheets="@../../../css/font.css" text="Home / Place Order">
          <font>
             <Font name="Segoe UI Semibold" size="13.0" />
          </font>
       </Label>
+      <TextField layoutX="434.0" layoutY="13.0" prefHeight="46.0" prefWidth="442.0" promptText="Search Product...">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="searchbar" />
+            <String fx:value="body-font" />
+         </styleClass>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </TextField>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="445.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="892.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Slider.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <AnchorPane layoutX="54.0" layoutY="83.0" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #C9E6FF; -fx-background-radius: 5px;">
+         <children>
+            <Label layoutX="114.0" layoutY="8.0" opacity="0.9" styleClass="body-font" stylesheets="@../../../css/font.css" text="Gents" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="38.0" layoutY="128.0" prefHeight="755.0" prefWidth="929.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <GridPane layoutX="13.0" layoutY="14.0" prefHeight="730.0" prefWidth="901.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="358.0" layoutY="83.0" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #C9E6FF; -fx-background-radius: 5px;">
+         <children>
+            <Label layoutX="119.0" layoutY="8.0" opacity="0.9" styleClass="body-font" stylesheets="@../../../css/font.css" text="Ladies" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="659.0" layoutY="82.0" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #C9E6FF; -fx-background-radius: 5px;">
+         <children>
+            <Label layoutX="128.0" layoutY="8.0" opacity="0.9" styleClass="body-font" stylesheets="@../../../css/font.css" text="Kids" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="984.0" layoutY="82.0" prefHeight="802.0" prefWidth="348.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <Label layoutX="13.0" layoutY="9.0" styleClass="cart-heading-font" stylesheets="@../../../css/font.css" text="Order Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="291.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/icon/dashboard-icon/Add%20User%20Male.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="59.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Order ID : ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="60.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="P001" textFill="#308edf">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="241.0" layoutY="62.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="2024-10-09">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="11.0" layoutY="103.0" prefHeight="39.0" prefWidth="326.0" promptText="Search customer by Phone Number...">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <TextField editable="false" layoutX="11.0" layoutY="155.0" prefHeight="39.0" prefWidth="326.0" promptText="Name">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Line endX="216.6666259765625" layoutX="116.0" layoutY="213.0" opacity="0.3" startX="-100.0" />
+            <Line endX="216.6666259765625" layoutX="113.0" layoutY="556.0" opacity="0.3" startX="-100.0" />
+            <AnchorPane layoutX="15.0" layoutY="574.0" prefHeight="39.0" prefWidth="318.0" styleClass="customer-details" stylesheets="@../../../css/text-field.css">
+               <children>
+                  <Label layoutX="8.0" layoutY="7.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Subtotal">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="204.0" layoutY="7.0" prefWidth="100.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="0.00">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="618.0" prefHeight="39.0" prefWidth="318.0" styleClass="customer-details" stylesheets="@../../../css/text-field.css">
+               <children>
+                  <Label layoutX="8.0" layoutY="7.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Tax">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="205.0" layoutY="7.0" prefWidth="100.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="0.00">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="664.0" prefHeight="46.0" prefWidth="318.0" styleClass="customer-details" stylesheets="@../../../css/text-field.css">
+               <children>
+                  <Label layoutX="8.0" layoutY="8.0" styleClass="cart-total-font" stylesheets="@../../../css/font.css" text="Total" textFill="#308edf">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="156.0" layoutY="8.0" prefWidth="150.0" styleClass="cart-total-font" stylesheets="@../../../css/font.css" text="LKR 0.00" textFill="#308edf">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </AnchorPane>
+            <JFXButton layoutX="153.0" layoutY="728.0" prefHeight="46.0" prefWidth="180.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Place Order" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

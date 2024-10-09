@@ -1,26 +1,32 @@
 package com.clothify.controller;
 
 import com.clothify.db.DBConnection;
-import com.clothify.entity.UserCredentials;
+import com.clothify.dto.UserCredentials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.ResourceBundle;
 
-public class LoginFormController {
+public class LoginFormController implements Initializable {
 
     @FXML
     private JFXButton btnSignIn;
@@ -29,12 +35,14 @@ public class LoginFormController {
     private JFXTextField txtEmail;
 
     @FXML
+    private Label heading;
+
+    @FXML
     private JFXPasswordField txtPassword;
 
     @FXML
     void btnSignInOnAction(ActionEvent event) {
         loginValidate();
-
     }
 
     @FXML
@@ -113,4 +121,9 @@ public class LoginFormController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Font customFont = Font.loadFont(getClass().getResource("/fonts/Poppins-Medium.ttf").toExternalForm(), 40);
+        //heading.setFont(customFont);
+    }
 }

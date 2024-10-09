@@ -108,7 +108,7 @@ public class UserDashboardBaseFormController implements Initializable {
         try {
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
-            stage.setTitle("Dashboard");
+            stage.setTitle("Login");
             stage.setResizable(false);
             stage.getIcons().add(new Image("img/logo-round.png"));
             stage.show();

@@ -1,4 +1,4 @@
-package com.clothify.entity;
+package com.clothify.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,9 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 public class UserCredentials {
-    @Id
     private int id;
     private String email;
     private String password;

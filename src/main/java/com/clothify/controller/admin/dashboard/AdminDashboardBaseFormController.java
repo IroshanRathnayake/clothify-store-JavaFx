@@ -119,6 +119,7 @@ public class AdminDashboardBaseFormController implements Initializable {
     void btnSupplierOnAction(ActionEvent event) {
         changeTheButtonStyle(btnSupplier);
     }
+
     @FXML
     void menubarCloseOnAction(ActionEvent event) {
         System.exit(0);
@@ -148,18 +149,18 @@ public class AdminDashboardBaseFormController implements Initializable {
     }
 
     //Logout Action
-    private void logout(){
+    private void logout() {
 
         Alert logoutAlert = new Alert(Alert.AlertType.CONFIRMATION);
         logoutAlert.setTitle("Cothify Store");
         logoutAlert.setContentText("Do you want to logout?");
         Optional<ButtonType> buttonType = logoutAlert.showAndWait();
-        if(buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
+        if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
             Stage stage = new Stage();
             try {
                 stage.setScene(new Scene(
                         FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
-                stage.setTitle("Dashboard");
+                stage.setTitle("Login");
                 stage.setResizable(false);
                 stage.getIcons().add(new Image("img/logo-round.png"));
                 stage.show();

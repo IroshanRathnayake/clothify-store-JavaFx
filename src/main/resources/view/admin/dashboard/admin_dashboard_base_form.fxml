@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardBaseFormController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardBaseFormController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -40,7 +41,7 @@
                   <Image url="@../../../img/logo.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnDashboard" layoutX="31.0" layoutY="107.0" onAction="#btnDashboardOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" stylesheets="@../../../css/button.css" text="Dashboard" textFill="#308edf">
+            <JFXButton fx:id="btnDashboard" layoutX="31.0" layoutY="107.0" onAction="#btnDashboardOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Dashboard" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -55,7 +56,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btnPlaceOrder" layoutX="31.0" layoutY="187.0" onAction="#btnPlaceOrderOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Place Order" textFill="#308edf">
+            <JFXButton fx:id="btnPlaceOrder" layoutX="31.0" layoutY="187.0" onAction="#btnPlaceOrderOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Place Order" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -70,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btnEmployee" layoutX="28.0" layoutY="264.0" onAction="#btnEmployeeOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Employee" textFill="#308edf">
+            <JFXButton fx:id="btnEmployee" layoutX="28.0" layoutY="264.0" onAction="#btnEmployeeOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Employee" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -88,7 +89,7 @@
                   <Insets right="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnCustomer" layoutX="30.0" layoutY="342.0" onAction="#btnCustomerOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Customer" textFill="#308edf">
+            <JFXButton fx:id="btnCustomer" layoutX="30.0" layoutY="342.0" onAction="#btnCustomerOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Customer" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -106,7 +107,7 @@
                   <Insets right="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnProduct" layoutX="31.0" layoutY="419.0" onAction="#btnProductOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Product" textFill="#308edf">
+            <JFXButton fx:id="btnProduct" layoutX="31.0" layoutY="419.0" onAction="#btnProductOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Product" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -124,7 +125,7 @@
                   <Insets right="25.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnInventory" layoutX="31.0" layoutY="499.0" onAction="#btnInventoryOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Inventory" textFill="#308edf">
+            <JFXButton fx:id="btnInventory" layoutX="31.0" layoutY="499.0" onAction="#btnInventoryOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Inventory" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -142,7 +143,7 @@
                   <Insets right="20.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnSupplier" layoutX="31.0" layoutY="581.0" onAction="#btnSupplierOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Supplier" textFill="#308edf">
+            <JFXButton fx:id="btnSupplier" layoutX="31.0" layoutY="581.0" onAction="#btnSupplierOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Supplier" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -160,7 +161,7 @@
                   <Insets right="20.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnOrders" layoutX="28.0" layoutY="662.0" onAction="#btnOrdersOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Orders" textFill="#308edf">
+            <JFXButton fx:id="btnOrders" layoutX="28.0" layoutY="662.0" onAction="#btnOrdersOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Orders" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -179,7 +180,7 @@
                </padding>
             </JFXButton>
             <Line endX="104.66664123535156" layoutX="124.0" layoutY="744.0" opacity="0.5" startX="-100.66666412353516" />
-            <JFXButton fx:id="btnSettings" layoutX="33.0" layoutY="778.0" onAction="#btnSettingsOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Settings" textFill="#308edf">
+            <JFXButton fx:id="btnSettings" layoutX="33.0" layoutY="778.0" onAction="#btnSettingsOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Settings" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -197,7 +198,7 @@
                   <Insets right="20.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnLogout" layoutX="33.0" layoutY="861.0" onAction="#btnLogoutOnAction" opacity="0.9" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" text="Logout" textFill="#e4483e">
+            <JFXButton fx:id="btnLogout" layoutX="33.0" layoutY="861.0" onAction="#btnLogoutOnAction" opacity="0.9" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Logout" textFill="#e4483e">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -218,4 +219,39 @@
          </children>
       </AnchorPane>
    </left>
+   <center>
+      <BorderPane fx:id="mainBorderPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="79.0" prefWidth="1353.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="53.0" prefWidth="1293.0" style="-fx-background-color: #ffffff;" styleClass="navBar" stylesheets="@../../../css/anchor-pane.css">
+                     <children>
+                        <Label layoutX="25.0" layoutY="16.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Welcome to Clothify, Admin" textFill="#308edf">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1170.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/icon/dashboard-icon/Alarm.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1220.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/icon/dashboard-icon/Ellipse%201.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </center>
 </BorderPane>

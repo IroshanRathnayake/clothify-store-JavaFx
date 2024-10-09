@@ -28,22 +28,22 @@
             <Image url="@../img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="heading" layoutX="807.0" layoutY="180.0" opacity="0.72" style="-fx-font-weight: 800;" text="Login">
+      <Label fx:id="heading" layoutX="807.0" layoutY="180.0" opacity="0.72" style="-fx-font-weight: 800;" styleClass="custom-font" stylesheets="@../css/font.css" text="Login">
          <font>
             <Font name="Bahnschrift" size="42.0" />
          </font>
       </Label>
-      <Label layoutX="806.0" layoutY="252.0" opacity="0.5" stylesheets="@../css/font.css" text="A user-friendly POS system for managing sales, inventory, ">
+      <Label layoutX="806.0" layoutY="252.0" opacity="0.5" styleClass="body-font" stylesheets="@../css/font.css" text="A user-friendly POS system for managing sales, inventory, ">
          <font>
             <Font name="Segoe UI" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="806.0" layoutY="277.0" opacity="0.5" text="and customer orders efficiently in the clothing store.">
+      <Label layoutX="806.0" layoutY="277.0" opacity="0.5" styleClass="body-font" stylesheets="@../css/font.css" text="and customer orders efficiently in the clothing store.">
          <font>
             <Font name="Segoe UI" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtEmail" focusColor="#308edf" layoutX="810.0" layoutY="392.0" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="john@email.com" style="-fx-background-color: #dcf2ff;">
+      <JFXTextField fx:id="txtEmail" focusColor="#308edf" layoutX="810.0" layoutY="392.0" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="john@email.com" style="-fx-background-color: #dcf2ff;" styleClass="body-font" stylesheets="@../css/font.css">
          <font>
             <Font name="Segoe UI" size="15.0" />
          </font>
@@ -54,7 +54,7 @@
             <Insets left="10.0" />
          </padding>
       </JFXTextField>
-      <JFXPasswordField fx:id="txtPassword" focusColor="#308edf" layoutX="814.0" layoutY="496.0" onAction="#txtPasswordOnAction" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="******" style="-fx-background-color: #dcf2ff;">
+      <JFXPasswordField fx:id="txtPassword" focusColor="#308edf" layoutX="814.0" layoutY="496.0" onAction="#txtPasswordOnAction" opacity="0.7" prefHeight="52.0" prefWidth="411.0" promptText="******" style="-fx-background-color: #dcf2ff;" styleClass="body-font" stylesheets="@../css/font.css">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -65,17 +65,17 @@
             <Insets left="10.0" />
          </padding>
       </JFXPasswordField>
-      <Label layoutX="807.0" layoutY="361.0" opacity="0.87" text="Email">
+      <Label layoutX="807.0" layoutY="361.0" opacity="0.87" styleClass="body-font" stylesheets="@../css/font.css" text="Email">
          <font>
             <Font name="Ebrima" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="808.0" layoutY="469.0" opacity="0.87" text="Password">
+      <Label layoutX="808.0" layoutY="469.0" opacity="0.87" styleClass="body-font" stylesheets="@../css/font.css" text="Password">
          <font>
             <Font name="Ebrima" size="16.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnSignIn" layoutX="1073.0" layoutY="589.0" onAction="#btnSignInOnAction" prefHeight="45.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" text="Sign In" textFill="WHITE">
+      <JFXButton fx:id="btnSignIn" layoutX="1073.0" layoutY="589.0" onAction="#btnSignInOnAction" prefHeight="45.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="button-font" stylesheets="@../css/font.css" text="Sign In" textFill="WHITE">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="814.0" layoutY="602.0" onDragDetected="#txtForgotPasswordOnAction" opacity="0.75" text="Forgot Password ?" textFill="#308edf">
+      <Label layoutX="814.0" layoutY="602.0" onDragDetected="#txtForgotPasswordOnAction" opacity="0.75" styleClass="body-font" stylesheets="@../css/font.css" text="Forgot Password ?" textFill="#308edf">
          <font>
             <Font size="15.0" />
          </font>
@@ -91,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label layoutX="897.0" layoutY="765.0" opacity="0.5" text="Copywrite © 2024 Clothify Store ">
+      <Label layoutX="897.0" layoutY="765.0" opacity="0.5" styleClass="body-font" stylesheets="@../css/font.css" text="Copywrite © 2024 Clothify Store ">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>

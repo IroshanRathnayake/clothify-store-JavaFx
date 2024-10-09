@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Poppins Medium';
+    src: url('/fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Inter 18pt Medium';
+    src: url('/fonts/Inter_18pt-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Inter 24pt SemiBold';
+    src: url('/fonts/Inter_24pt-SemiBold.ttf');
+}
+.custom-font{
+    -fx-font-family: 'Poppins Medium';
+    -fx-font-size: 40px;
+}
+
+.body-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 16px;
+}
+
+.button-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 19px;
+}
+
+.dashboard-button-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 17px;
+}
+
+.dashboard-heading-font{
+    -fx-font-family: 'Poppins Medium';
+    -fx-font-size: 34px;
+}
+
+.card-heading-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 24px;
+}
+
+.card-price-font{
+    -fx-font-family: 'Inter 24pt SemiBold';
+    -fx-font-size: 40px;
+}
+
+.path-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 15px;
+}
+
+/*Cart*/
+.cart-heading-font{
+    -fx-font-family: 'Poppins Medium';
+    -fx-font-size: 24px;
+}
+
+.cart-total-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 20px;
+}
+
+.place-order-button-font{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 19px;
+}
