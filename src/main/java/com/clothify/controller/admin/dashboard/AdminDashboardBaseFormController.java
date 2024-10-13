@@ -82,17 +82,20 @@ public class AdminDashboardBaseFormController implements Initializable {
     @FXML
     void btnCustomerOnAction(ActionEvent event) {
         changeTheButtonStyle(btnCustomer);
+        loadContent("/view/common/customer/customer_form.fxml");
     }
 
 
     @FXML
     void btnEmployeeOnAction(ActionEvent event) {
         changeTheButtonStyle(btnEmployee);
+        loadContent("/view/admin/employee/employee_form.fxml");
     }
 
     @FXML
     void btnInventoryOnAction(ActionEvent event) {
         changeTheButtonStyle(btnInventory);
+        loadContent("/view/common/product/inventory_form.fxml");
     }
 
     @FXML
@@ -103,11 +106,14 @@ public class AdminDashboardBaseFormController implements Initializable {
     @FXML
     void btnOrdersOnAction(ActionEvent event) {
         changeTheButtonStyle(btnOrders);
+        loadContent("/view/common/order/orders_form.fxml");
+
     }
 
     @FXML
     void btnProductOnAction(ActionEvent event) {
         changeTheButtonStyle(btnProduct);
+        loadContent("/view/common/product/product_form.fxml");
     }
 
     @FXML
@@ -118,6 +124,7 @@ public class AdminDashboardBaseFormController implements Initializable {
     @FXML
     void btnSupplierOnAction(ActionEvent event) {
         changeTheButtonStyle(btnSupplier);
+        loadContent("/view/admin/supplier/supplier_form.fxml");
     }
 
     @FXML

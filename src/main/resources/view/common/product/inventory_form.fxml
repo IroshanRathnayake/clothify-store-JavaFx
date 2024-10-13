@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="895.0" minWidth="1309.0" prefHeight="895.0" prefWidth="1340.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
+   <children>
+      <Label layoutX="38.0" layoutY="11.0" opacity="0.83" styleClass="dashboard-heading-font" stylesheets="@../../../css/font.css" text="Inventory">
+         <font>
+            <Font name="Verdana" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="1184.0" layoutY="23.0" opacity="0.5" styleClass="path-font" stylesheets="@../../../css/font.css" text="Home / Inventory">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="434.0" layoutY="13.0" prefHeight="46.0" prefWidth="442.0" promptText="Search Inventory...">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="searchbar" />
+            <String fx:value="body-font" />
+         </styleClass>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </TextField>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="445.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="892.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Slider.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <AnchorPane layoutX="38.0" layoutY="79.0" prefHeight="802.0" prefWidth="929.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <TableView layoutX="14.0" layoutY="24.0" prefHeight="774.0" prefWidth="904.0" styleClass="body-font">
+              <columns>
+                <TableColumn prefWidth="102.66665267944336" text="ID" />
+                <TableColumn prefWidth="300.0000457763672" text="Name" />
+                  <TableColumn minWidth="3.3333740234375" prefWidth="83.99996948242188" text="Size" />
+                  <TableColumn prefWidth="117.3333740234375" text="Quantity" />
+                  <TableColumn prefWidth="149.33331298828125" text="Unit Price" />
+                  <TableColumn prefWidth="152.6666259765625" text="Total Price" />
+              </columns>
+               <stylesheets>
+                  <URL value="@../../../css/table.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="984.0" layoutY="80.0" prefHeight="802.0" prefWidth="348.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <Label layoutX="13.0" layoutY="9.0" styleClass="cart-heading-font" stylesheets="@../../../css/font.css" text="Inventory Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="296.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/icon/dashboard-icon/Add%20New.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="19.0" layoutY="251.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="ID ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="252.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="P012" textFill="#308edf">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="95.0" layoutY="352.0" prefHeight="39.0" prefWidth="239.0" promptText="Long Sleeve Check Shirt">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <JFXButton layoutX="95.0" layoutY="658.0" prefHeight="39.0" prefWidth="239.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="204.0" fitWidth="204.0" layoutX="83.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/product/shirt.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="18.0" layoutY="301.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Cat.">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="361.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="417.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Size">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="94.0" layoutY="468.0" prefHeight="39.0" prefWidth="239.0" promptText="18">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Label layoutX="15.0" layoutY="477.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Quantity">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="94.0" layoutY="527.0" prefHeight="39.0" prefWidth="239.0" promptText="LKR 2950.00">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Label layoutX="15.0" layoutY="536.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Price">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="96.0" layoutY="713.0" prefHeight="39.0" prefWidth="114.0" style="-fx-background-color: #989898; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="219.0" layoutY="713.0" prefHeight="39.0" prefWidth="114.0" style="-fx-background-color: #F44336; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ComboBox layoutX="94.0" layoutY="294.0" prefHeight="39.0" prefWidth="239.0" promptText="Gents">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </ComboBox>
+            <ComboBox layoutX="95.0" layoutY="410.0" prefHeight="39.0" prefWidth="239.0" promptText="L">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </ComboBox>
+            <TextField layoutX="94.0" layoutY="585.0" prefHeight="39.0" prefWidth="239.0" promptText="LKR 43980.00">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Label layoutX="15.0" layoutY="594.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Total">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

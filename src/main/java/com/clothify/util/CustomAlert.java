@@ -1,4 +1,4 @@
-package com.clothify.controller;
+package com.clothify.util;
 
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="895.0" minWidth="1309.0" prefHeight="895.0" prefWidth="1340.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
+   <children>
+      <Label layoutX="38.0" layoutY="11.0" opacity="0.83" styleClass="dashboard-heading-font" stylesheets="@../../../css/font.css" text="Orders">
+         <font>
+            <Font name="Verdana" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="1184.0" layoutY="23.0" opacity="0.5" styleClass="path-font" stylesheets="@../../../css/font.css" text="Home / Orders">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="434.0" layoutY="13.0" prefHeight="46.0" prefWidth="442.0" promptText="Search Orders...">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="searchbar" />
+            <String fx:value="body-font" />
+         </styleClass>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </TextField>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="445.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="892.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/Slider.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <AnchorPane layoutX="38.0" layoutY="79.0" prefHeight="802.0" prefWidth="929.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <TableView layoutX="13.0" layoutY="14.0" prefHeight="774.0" prefWidth="904.0" styleClass="body-font">
+               <columns>
+                  <TableColumn prefWidth="201.33330917358398" text="Order ID" />
+                  <TableColumn prefWidth="202.6667022705078" text="Customer ID" />
+                  <TableColumn prefWidth="117.3333740234375" text="Quantity" />
+                  <TableColumn prefWidth="196.0" text="Total" />
+                  <TableColumn prefWidth="184.6666259765625" text="Date" />
+               </columns>
+               <stylesheets>
+                  <URL value="@../../../css/table.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="984.0" layoutY="80.0" prefHeight="802.0" prefWidth="348.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+         <children>
+            <Label layoutX="13.0" layoutY="9.0" styleClass="cart-heading-font" stylesheets="@../../../css/font.css" text="Order Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="84.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Order ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="85.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="P012" textFill="#308edf">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="96.0" layoutY="170.0" prefHeight="39.0" prefWidth="239.0" promptText="Saman Silva">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <JFXButton layoutX="94.0" layoutY="715.0" prefHeight="39.0" prefWidth="239.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Print" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="17.0" layoutY="179.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="233.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Product List">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="94.0" layoutY="601.0" prefHeight="39.0" prefWidth="239.0" promptText="LKR 43980.00">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Label layoutX="15.0" layoutY="610.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Total">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="125.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Cust ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="127.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="C012" textFill="#308edf">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXListView layoutX="17.0" layoutY="259.0" prefHeight="262.0" prefWidth="321.0" />
+            <TextField layoutX="93.0" layoutY="549.0" prefHeight="39.0" prefWidth="239.0" promptText="YYYY-MM-DD HH:MM">
+               <stylesheets>
+                  <URL value="@../../../css/text-field.css" />
+                  <URL value="@../../../css/font.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="customer-details" />
+                  <String fx:value="body-font" />
+               </styleClass>
+            </TextField>
+            <Label layoutX="14.0" layoutY="558.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Date">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

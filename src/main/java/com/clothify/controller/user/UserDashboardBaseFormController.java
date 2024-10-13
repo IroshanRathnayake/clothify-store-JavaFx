@@ -51,13 +51,14 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonList = Arrays.asList(btnDashboard, btnPlaceOrder);
+        buttonList = Arrays.asList(btnDashboard, btnPlaceOrder, btnCustomer, btnOrders, btnProduct, btnInventory, btnSettings);
         changeTheButtonStyle(btnDashboard);
         loadContent("view/user/dashboard/user_dashboard_from.fxml");
     }
     @FXML
     void btnCustomerOnAction(ActionEvent event) {
-
+        changeTheButtonStyle(btnCustomer);
+        loadContent("view/common/customer/customer_form.fxml");
     }
 
     @FXML
@@ -68,7 +69,8 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @FXML
     void btnInventoryOnAction(ActionEvent event) {
-
+        changeTheButtonStyle(btnInventory);
+        loadContent("view/common/product/inventory_form.fxml");
     }
 
     @FXML
@@ -78,7 +80,8 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @FXML
     void btnOrdersOnAction(ActionEvent event) {
-
+        changeTheButtonStyle(btnOrders);
+        loadContent("view/common/order/orders_form.fxml ");
     }
 
     @FXML
@@ -89,12 +92,13 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @FXML
     void btnProductOnAction(ActionEvent event) {
-
+        changeTheButtonStyle(btnProduct);
+        loadContent("view/common/product/product_form.fxml");
     }
 
     @FXML
     void btnSettingsOnAction(ActionEvent event) {
-
+        changeTheButtonStyle(btnSettings);
     }
 
     @FXML
