@@ -1,7 +1,6 @@
 package com.clothify.repository.custom.impl;
 
 import com.clothify.db.DBConnection;
-import com.clothify.dto.UserCredentials;
 import com.clothify.entity.UserCredentialsEntity;
 import com.clothify.repository.AuthDao;
 
@@ -13,14 +12,13 @@ import java.time.LocalDateTime;
 
 public class AuthDaoImpl implements AuthDao {
     @Override
-    public UserCredentialsEntity authenticateLogin(String email, String password) {
-        String SQl = "SELECT * FROM user_credentials WHERE email=? && password=?";
+    public UserCredentialsEntity getUserByEmail(String email) {
+        String SQl = "SELECT * FROM user_credentials WHERE email=?";
 
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement psTm = connection.prepareStatement(SQl);
             psTm.setString(1, email );
-            psTm.setString(2, password );
 
             ResultSet rs = psTm.executeQuery();
 
