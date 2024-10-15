@@ -1,4 +1,7 @@
 package com.clothify.repository.custom;
 
-public class CustomerDao {
+import com.clothify.entity.CustomerEntity;
+import com.clothify.repository.CrudDao;
+
+public interface CustomerDao extends CrudDao<CustomerEntity> {
 }
