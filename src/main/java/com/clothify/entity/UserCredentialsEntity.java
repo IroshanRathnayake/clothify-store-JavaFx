@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @Entity
-public class UserCredentialsEntity {
+public class  UserCredentialsEntity {
     @Id
     private int id;
     private String email;

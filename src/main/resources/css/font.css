@@ -67,3 +67,8 @@
     -fx-font-family: 'Inter 18pt Medium';
     -fx-font-size: 19px;
 }
+
+.form-button{
+    -fx-font-family: 'Inter 18pt Medium';
+    -fx-font-size: 17px;
+}

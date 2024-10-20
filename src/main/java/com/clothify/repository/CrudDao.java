@@ -8,6 +8,5 @@ public interface CrudDao <T> extends SuperDao{
     boolean delete(String id);
     ObservableList<T> findAll();
     T findById(String id);
-    T findByPhone(String phone);
     String findLastID();
 }
