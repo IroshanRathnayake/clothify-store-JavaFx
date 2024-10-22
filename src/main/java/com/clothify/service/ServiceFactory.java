@@ -1,6 +1,7 @@
 package com.clothify.service;
 
 import com.clothify.service.custom.impl.CustomerServiceImpl;
+import com.clothify.service.custom.impl.OrderServiceImpl;
 import com.clothify.service.custom.impl.ProductServiceImpl;
 import com.clothify.service.custom.impl.SupplierServiceImpl;
 import com.clothify.util.ServiceType;
@@ -19,6 +20,7 @@ public class ServiceFactory {
             case CUSTOMER:return (T) new CustomerServiceImpl();
             case PRODUCT:return (T) new ProductServiceImpl();
             case SUPPLIER:return (T) new SupplierServiceImpl();
+            case ORDER:return (T) new OrderServiceImpl();
         }
         return null;
     }
