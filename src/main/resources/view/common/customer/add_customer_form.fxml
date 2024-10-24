@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="668.0" prefWidth="348.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.common.customer.AddCustomerFormController">
+   <children>
+      <Label layoutX="13.0" layoutY="9.0" styleClass="cart-heading-font" stylesheets="@../../../css/font.css" text="Add New Customer">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="251.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="ID ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerID" layoutX="102.0" layoutY="252.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="C000" textFill="#308edf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbTitle" layoutX="94.0" layoutY="294.0" onAction="#cmbTitleOnAction" prefHeight="39.0" prefWidth="239.0" promptText="Select Title">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="customer-details" />
+            <String fx:value="body-font" />
+         </styleClass>
+      </ComboBox>
+      <TextField fx:id="txtName" layoutX="95.0" layoutY="352.0" prefHeight="39.0" prefWidth="239.0" promptText="N/A">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="customer-details" />
+            <String fx:value="body-font" />
+         </styleClass>
+      </TextField>
+      <TextField fx:id="txtAddress" layoutX="94.0" layoutY="411.0" prefHeight="39.0" prefWidth="239.0" promptText="N/A">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="customer-details" />
+            <String fx:value="body-font" />
+         </styleClass>
+      </TextField>
+      <TextField fx:id="txtPhoneNumber" layoutX="94.0" layoutY="470.0" prefHeight="39.0" prefWidth="239.0" promptText="N/A">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="customer-details" />
+            <String fx:value="body-font" />
+         </styleClass>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="94.0" layoutY="531.0" prefHeight="39.0" prefWidth="239.0" promptText="N/A">
+         <stylesheets>
+            <URL value="@../../../css/text-field.css" />
+            <URL value="@../../../css/font.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="customer-details" />
+            <String fx:value="body-font" />
+         </styleClass>
+      </TextField>
+      <JFXButton fx:id="btnAdd" layoutX="95.0" layoutY="598.0" onAction="#btnAddOnAction" prefHeight="39.0" prefWidth="239.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="customerImg" fitHeight="145.0" fitWidth="145.0" layoutX="107.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/icon/dashboard-icon/man.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="18.0" layoutY="301.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Title">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="361.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="420.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Address">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="479.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Phone">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="540.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

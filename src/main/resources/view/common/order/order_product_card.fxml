@@ -27,9 +27,9 @@
             <Insets left="5.0" right="5.0" />
          </padding>
       </Label>
-      <Label layoutX="137.0" layoutY="210.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Qty: " />
-      <Label fx:id="lblQuantity" layoutX="172.0" layoutY="210.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="0" textFill="#308edf" />
-      <Spinner fx:id="quantitySpinner" editable="true" layoutX="25.0" layoutY="209.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="137.0" layoutY="216.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="Qty: " />
+      <Label fx:id="lblQuantity" layoutX="172.0" layoutY="216.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="0" textFill="#308edf" />
+      <Spinner fx:id="quantitySpinner" editable="true" layoutX="25.0" layoutY="212.0" prefHeight="25.0" prefWidth="77.0" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

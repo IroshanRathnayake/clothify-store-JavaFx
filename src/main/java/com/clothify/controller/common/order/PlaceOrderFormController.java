@@ -1,10 +1,9 @@
 package com.clothify.controller.common.order;
 
-import com.clothify.dto.CartTM;
-import com.clothify.dto.Customer;
-import com.clothify.dto.Product;
+import com.clothify.dto.*;
 import com.clothify.service.ServiceFactory;
 import com.clothify.service.custom.CustomerService;
+import com.clothify.service.custom.OrderService;
 import com.clothify.service.custom.ProductService;
 import com.clothify.util.CustomAlert;
 import com.clothify.util.ProductType;
@@ -17,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -28,14 +29,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 import lombok.Getter;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class PlaceOrderFormController implements Initializable {
 
@@ -47,6 +50,9 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     private JFXButton btnLadies;
+
+    @FXML
+    private JFXButton btnPlaceOrder;
 
     @FXML
     private Label lblDate;
@@ -90,13 +96,18 @@ public class PlaceOrderFormController implements Initializable {
     @FXML
     private TableView<CartTM> tblCart;
 
+    @FXML
+    private TextField txtSearch;
+
     @Getter
     private static PlaceOrderFormController placeOrderFormController;
+    private final OrderService service = ServiceFactory.getInstance().getServiceType(ServiceType.ORDER);
     private final ProductService productService = ServiceFactory.getInstance().getServiceType(ServiceType.PRODUCT);
     private final CustomerService customerService = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
     private List<Product> productList;
     private List<JFXButton> buttonList;
     private final ObservableList<CartTM> cartList = FXCollections.observableArrayList();
+    private Customer searchedCustomer;
 
 
     @Override
@@ -106,6 +117,29 @@ public class PlaceOrderFormController implements Initializable {
         productList = productService.getAllProducts();
         loadProducts(ProductType.GENTS);
         changeTheButtonStyle(btnGents);
+        loadDateTime();
+        generateNextID();
+
+        // Add listener to search
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            searchProducts(newValue);
+        });
+    }
+
+    // Filter products
+    private void searchProducts(String searchQuery) {
+        List<Product> filteredProducts = new ArrayList<>();
+
+        if (searchQuery == null || searchQuery.isEmpty()) {
+            loadProducts(ProductType.GENTS);
+        } else {
+            for (Product product : productList) {
+                if (product.getName().toLowerCase().contains(searchQuery.toLowerCase())) {
+                    filteredProducts.add(product);
+                }
+            }
+            loadProductToGridPane(filteredProducts);
+        }
     }
 
     @FXML
@@ -128,12 +162,60 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
+        Order order = new Order(
+                lblOrderID.getText(),
+                loadDateTime(),
+                searchedCustomer.getId()
+        );
 
+        List<OrderDetail> orderDetails = new ArrayList<>();
+
+        cartList.forEach(obj -> {
+            orderDetails.add(
+                    new OrderDetail(
+                            lblOrderID.getText(),
+                            obj.getProductId(),
+                            obj.getQuantity(),
+                            0.0)
+            );
+        });
+
+        try {
+            if (service.placeOrder(order, orderDetails)) {
+                CustomAlert.showAlert(
+                        Alert.AlertType.WARNING,
+                        "Clothify Store",
+                        "Order Placed Successfully",
+                        "/img/icon/success-48.png"
+                );
+                clearAll();
+                generateNextID();
+            } else {
+                CustomAlert.showAlert(
+                        Alert.AlertType.WARNING,
+                        "Clothify Store",
+                        "Order Placed Failed",
+                        "/img/icon/error-48.png"
+                );
+            }
+        } catch (SQLException e) {
+            CustomAlert.errorAlert("Clothify Store", e);
+        }
     }
 
     @FXML
     void iconAddCustomerOnClick(MouseEvent event) {
-
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/view/common/customer/add_customer_form.fxml"))));
+            stage.setTitle("Add Customer");
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("img/logo-round.png"));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -143,9 +225,10 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void txtPhoneNumberOnAction(ActionEvent event) {
-        Customer customer = customerService.searchCustomer(txtPhoneNumber.getText());
-        if (customer != null) {
-            txtCustomerName.setText(customer.getName());
+        searchedCustomer = customerService.searchCustomer(txtPhoneNumber.getText());
+        if (searchedCustomer != null) {
+            txtCustomerName.setText(searchedCustomer.getName());
+            btnPlaceOrder.setDisable(false);
         } else {
             CustomAlert.showAlert(
                     Alert.AlertType.WARNING,
@@ -154,14 +237,13 @@ public class PlaceOrderFormController implements Initializable {
                     "/img/icon/warning-48.png"
             );
         }
-
     }
 
     @FXML
-    void txtSearchOnAction(ActionEvent event) {
-
+    void txtSearchOnAction(ActionEvent event) throws IOException {
     }
 
+    //Load Products
     private void loadProducts(ProductType productType) {
         List<Product> categorizedProductList = new ArrayList<>();
 
@@ -189,7 +271,12 @@ public class PlaceOrderFormController implements Initializable {
                 }
                 break;
         }
+        loadProductToGridPane(categorizedProductList);
+    }
 
+    //load product to Grid Pane
+    private void loadProductToGridPane(List<Product> categorizedProductList) {
+        productGrid.getChildren().clear();
         int column = 0;
         int row = 1;
         try {
@@ -222,7 +309,6 @@ public class PlaceOrderFormController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     //Product add to cart
@@ -245,17 +331,26 @@ public class PlaceOrderFormController implements Initializable {
         ImageView deleteIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/icon/delete.png")));
         JFXButton btnDelete = new JFXButton();
         btnDelete.setGraphic(deleteIcon);
+        btnDelete.setCursor(Cursor.HAND);
 
         cartList.removeIf(oldProduct -> oldProduct.getProductId().equals(product.getId()));
 
-        cartList.add(new CartTM(
+        CartTM cartItem = new CartTM(
                 product.getId(),
                 product.getName(),
                 quantity,
                 product.getUnitPrice(),
                 btnDelete
-        ));
+        );
 
+        // Add event handler to btnDelete
+        btnDelete.setOnAction(event -> {
+            cartList.remove(cartItem);
+            tblCart.setItems(cartList);
+            setTotal();
+        });
+
+        cartList.add(cartItem);
         tblCart.setItems(cartList);
         setTotal();
 
@@ -277,6 +372,41 @@ public class PlaceOrderFormController implements Initializable {
             jfxButton.setStyle("-fx-background-color: #C4E3FF");
         }
         button.setStyle("-fx-background-color: #308EDF");
+    }
+
+    //Date
+    private LocalDateTime loadDateTime() {
+        Date date = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateNow = f.format(date);
+
+        lblDate.setText(dateNow.substring(0, 10));
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime ldt = LocalDateTime.parse(dateNow, formatter);
+
+        return ldt;
+    }
+
+    //Generate Next ID
+    private void generateNextID() {
+        String base = "D";
+        int id = Integer.parseInt(service.getLastOrderID());
+
+        if (id < 10) {
+            base += "00";
+        } else if (id < 100) {
+            base += "0";
+        }
+        lblOrderID.setText(base + (id + 1));
+    }
+
+    //Clear Fields
+    private void clearAll(){
+        tblCart.getItems().clear();
+        txtSearch.setText(null);
+        txtPhoneNumber.setText(null);
+        txtCustomerName.setText(null);
     }
 
 }

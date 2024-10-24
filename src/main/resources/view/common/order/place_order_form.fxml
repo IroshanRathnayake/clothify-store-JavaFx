@@ -30,7 +30,7 @@
             <Font name="Segoe UI Semibold" size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="434.0" layoutY="13.0" onAction="#txtSearchOnAction" prefHeight="46.0" prefWidth="442.0" promptText="Search Product...">
+      <TextField fx:id="txtSearch" layoutX="434.0" layoutY="13.0" onAction="#txtSearchOnAction" prefHeight="46.0" prefWidth="442.0" promptText="Search Product...">
          <stylesheets>
             <URL value="@../../../css/text-field.css" />
             <URL value="@../../../css/font.css" />
@@ -92,7 +92,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblOrderID" layoutX="102.0" layoutY="60.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="P001" textFill="#308edf">
+            <Label fx:id="lblOrderID" layoutX="102.0" layoutY="60.0" styleClass="body-font" stylesheets="@../../../css/font.css" text="P000" textFill="#308edf">
                <font>
                   <Font size="16.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPhoneNumber" layoutX="11.0" layoutY="103.0" onAction="#txtPhoneNumberOnAction" prefHeight="39.0" prefWidth="326.0" promptText="Search customer by Phone Number...">
+            <TextField fx:id="txtPhoneNumber" layoutX="11.0" layoutY="103.0" onAction="#txtPhoneNumberOnAction" prefHeight="39.0" prefWidth="326.0" promptText="Search customer by Phone Number..." style="-fx-border-color: #C9E6FF; -fx-border-radius: 10;">
                <stylesheets>
                   <URL value="@../../../css/text-field.css" />
                   <URL value="@../../../css/font.css" />
@@ -178,7 +178,7 @@
                   <Insets right="10.0" />
                </padding>
             </AnchorPane>
-            <JFXButton layoutX="153.0" layoutY="743.0" onAction="#btnPlaceOrderOnAction" prefHeight="46.0" prefWidth="180.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Place Order" textFill="WHITE">
+            <JFXButton fx:id="btnPlaceOrder" disable="true" layoutX="153.0" layoutY="743.0" onAction="#btnPlaceOrderOnAction" prefHeight="46.0" prefWidth="180.0" style="-fx-background-color: #308EDF; -fx-border-radius: 20;" styleClass="place-order-button-font" stylesheets="@../../../css/font.css" text="Place Order" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>

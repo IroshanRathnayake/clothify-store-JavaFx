@@ -1,10 +1,13 @@
 package com.clothify.repository.custom;
 
-import com.clothify.dto.Customer;
 import com.clothify.entity.CustomerEntity;
 import com.clothify.entity.OrderDetailEntity;
+import com.clothify.entity.OrderEntity;
 import com.clothify.repository.CrudDao;
 
-public interface OrderDao extends CrudDao<OrderDetailEntity> {
-    CustomerEntity getCustomerByPhone(String phone);
+import java.sql.SQLException;
+import java.util.List;
+
+public interface OrderDao extends CrudDao<OrderEntity> {
+    boolean saveOrderDetail(List<OrderDetailEntity> orderDetails);
 }
