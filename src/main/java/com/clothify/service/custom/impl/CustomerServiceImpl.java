@@ -5,11 +5,13 @@ import com.clothify.entity.CustomerEntity;
 import com.clothify.repository.DaoFactory;
 import com.clothify.repository.custom.CustomerDao;
 import com.clothify.service.custom.CustomerService;
+import com.clothify.util.CustomAlert;
 import com.clothify.util.DaoType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +23,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean addCustomer(Customer customer) {
-        return customerDao.save(modelMapper.map(customer, CustomerEntity.class));
+        try {
+            return customerDao.save(modelMapper.map(customer, CustomerEntity.class));
+        } catch (SQLException e) {
+            CustomAlert.errorAlert("Error Occurred", e);
+        }
+        return false;
     }
 
     @Override

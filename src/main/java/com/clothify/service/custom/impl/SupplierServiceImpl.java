@@ -5,11 +5,13 @@ import com.clothify.entity.SupplierEntity;
 import com.clothify.repository.DaoFactory;
 import com.clothify.repository.custom.SupplierDao;
 import com.clothify.service.custom.SupplierService;
+import com.clothify.util.CustomAlert;
 import com.clothify.util.DaoType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +23,12 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public boolean addSupplier(Supplier supplier) {
-        return supplierDao.save(modelMapper.map(supplier, SupplierEntity.class));
+        try {
+            return supplierDao.save(modelMapper.map(supplier, SupplierEntity.class));
+        } catch (SQLException e) {
+            CustomAlert.errorAlert("Error Occurred", e);
+        }
+        return false;
     }
 
     @Override

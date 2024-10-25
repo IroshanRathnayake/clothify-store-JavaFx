@@ -5,11 +5,13 @@ import com.clothify.entity.ProductEntity;
 import com.clothify.repository.DaoFactory;
 import com.clothify.repository.custom.ProductDao;
 import com.clothify.service.custom.ProductService;
+import com.clothify.util.CustomAlert;
 import com.clothify.util.DaoType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +23,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean addProduct(Product product) {
-        return  productDao.save(modelMapper.map(product, ProductEntity.class));
+        try {
+            return  productDao.save(modelMapper.map(product, ProductEntity.class));
+        } catch (SQLException e) {
+            CustomAlert.errorAlert("Error Occurred", e);
+        }
+        return false;
     }
 
     @Override

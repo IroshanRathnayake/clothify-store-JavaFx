@@ -5,21 +5,19 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Entity
-public class  UserCredentialsEntity {
+@Entity(name = "employee")
+public class EmployeeEntity {
     @Id
     private String id;
-    private String employeeID;
+    private String title;
+    private String name;
+    private String position;
+    private String address;
+    private String phoneNumber;
     private String email;
-    private String password;
-    private String role;
-    private LocalDateTime createdAt;
+    public Boolean loginAccess;
 }

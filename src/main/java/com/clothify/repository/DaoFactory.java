@@ -1,9 +1,6 @@
 package com.clothify.repository;
 
-import com.clothify.repository.custom.impl.CustomerDaoImpl;
-import com.clothify.repository.custom.impl.OrderDaoImpl;
-import com.clothify.repository.custom.impl.ProductDaoImpl;
-import com.clothify.repository.custom.impl.SupplierDaoImpl;
+import com.clothify.repository.custom.impl.*;
 import com.clothify.util.DaoType;
 
 public class DaoFactory {
@@ -21,6 +18,8 @@ public class DaoFactory {
             case PRODUCT:return (T) new ProductDaoImpl();
             case SUPPLIER:return (T) new SupplierDaoImpl();
             case ORDER: return (T) new OrderDaoImpl();
+            case EMPLOYEE: return (T) new EmployeeDaoImpl();
+            case USER_CREDENTIALS: return (T) new UserCredentialDaoImpl();
         }
         return null;
     }

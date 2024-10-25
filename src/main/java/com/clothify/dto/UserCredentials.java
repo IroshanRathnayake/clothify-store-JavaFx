@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserCredentials {
-    private int id;
+    private String id;
+    private String employeeID;
     private String email;
     private String password;
     private String role;

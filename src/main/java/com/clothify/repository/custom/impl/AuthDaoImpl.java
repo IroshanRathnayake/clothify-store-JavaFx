@@ -24,13 +24,14 @@ public class AuthDaoImpl implements AuthDao {
 
             UserCredentialsEntity userCredentials = null;
             while (rs.next()) {
-                String timeDate = rs.getString(5);
+                String timeDate = rs.getString(6);
                 timeDate = timeDate.replace(' ', 'T');
                 userCredentials = new UserCredentialsEntity(
-                        rs.getInt(1),
+                        rs.getString(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
+                        rs.getString(5),
                         LocalDateTime.parse(timeDate));
             }
             return userCredentials;
