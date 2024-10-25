@@ -19,4 +19,5 @@ public class OrderEntity {
     private String id;
     private LocalDateTime date;
     private String customerId;
+    private Double total;
 }

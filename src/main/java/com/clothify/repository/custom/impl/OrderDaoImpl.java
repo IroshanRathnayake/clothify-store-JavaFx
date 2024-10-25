@@ -16,13 +16,14 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean save(OrderEntity orderEntity) {
-        String SQL = "INSERT INTO orders VALUES (?,?,?)";
+        String SQL = "INSERT INTO orders VALUES (?,?,?,?)";
 
         try {
             return CrudUtil.execute(SQL,
                     orderEntity.getId(),
                     orderEntity.getDate(),
-                    orderEntity.getCustomerId()
+                    orderEntity.getCustomerId(),
+                    orderEntity.getTotal()
             );
         } catch (SQLException e) {
             throw new RuntimeException(e);

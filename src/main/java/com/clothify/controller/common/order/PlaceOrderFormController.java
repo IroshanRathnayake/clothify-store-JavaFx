@@ -108,6 +108,7 @@ public class PlaceOrderFormController implements Initializable {
     private List<JFXButton> buttonList;
     private final ObservableList<CartTM> cartList = FXCollections.observableArrayList();
     private Customer searchedCustomer;
+    private double total;
 
 
     @Override
@@ -165,7 +166,8 @@ public class PlaceOrderFormController implements Initializable {
         Order order = new Order(
                 lblOrderID.getText(),
                 loadDateTime(),
-                searchedCustomer.getId()
+                searchedCustomer.getId(),
+                total
         );
 
         List<OrderDetail> orderDetails = new ArrayList<>();
@@ -358,7 +360,7 @@ public class PlaceOrderFormController implements Initializable {
 
     //Set Total
     private void setTotal() {
-        double total = 0;
+        total = 0;
         for (CartTM cartTM : cartList) {
             total += cartTM.getUnitPrice() * cartTM.getQuantity();
         }
@@ -407,6 +409,9 @@ public class PlaceOrderFormController implements Initializable {
         txtSearch.setText(null);
         txtPhoneNumber.setText(null);
         txtCustomerName.setText(null);
+        lblSubTotal.setText("0.00");
+        lblDiscount.setText("0.00");
+        lblTotal.setText("LKR 0.00");
     }
 
 }

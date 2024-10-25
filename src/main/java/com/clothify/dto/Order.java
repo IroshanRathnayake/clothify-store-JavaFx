@@ -15,4 +15,5 @@ public class Order {
     private String id;
     private LocalDateTime date;
     private String customerId;
+    private Double total;
 }

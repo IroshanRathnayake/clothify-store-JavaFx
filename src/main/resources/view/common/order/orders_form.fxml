@@ -57,11 +57,11 @@
          <children>
             <TableView layoutX="13.0" layoutY="14.0" prefHeight="774.0" prefWidth="904.0" styleClass="body-font">
                <columns>
-                  <TableColumn prefWidth="201.33330917358398" text="Order ID" />
-                  <TableColumn prefWidth="202.6667022705078" text="Customer ID" />
-                  <TableColumn prefWidth="117.3333740234375" text="Quantity" />
-                  <TableColumn prefWidth="196.0" text="Total" />
-                  <TableColumn prefWidth="184.6666259765625" text="Date" />
+                  <TableColumn prefWidth="172.66668319702148" text="Order ID" />
+                  <TableColumn prefWidth="178.66664123535156" text="Customer ID" />
+                  <TableColumn prefWidth="214.66665649414062" text="Total" />
+                  <TableColumn prefWidth="171.3333740234375" text="Date" />
+                  <TableColumn prefWidth="166.0" text="Action" />
                </columns>
                <stylesheets>
                   <URL value="@../../../css/table.css" />
