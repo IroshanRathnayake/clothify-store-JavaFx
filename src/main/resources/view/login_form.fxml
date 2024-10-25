@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="814.0" layoutY="602.0" onDragDetected="#txtForgotPasswordOnAction" opacity="0.75" styleClass="body-font" stylesheets="@../css/font.css" text="Forgot Password ?" textFill="#308edf">
+      <Label layoutX="814.0" layoutY="602.0" onMouseClicked="#txtForgotPasswordOnAction" opacity="0.75" styleClass="body-font" stylesheets="@../css/font.css" text="Forgot Password ?" textFill="#308edf">
          <font>
             <Font size="15.0" />
          </font>

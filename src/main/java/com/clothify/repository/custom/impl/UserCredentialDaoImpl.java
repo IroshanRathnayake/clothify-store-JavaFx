@@ -118,4 +118,25 @@ public class UserCredentialDaoImpl implements UserCredentialDao {
         }
         return null;
     }
+
+    @Override
+    public UserCredentialsEntity findByEmail(String email) throws SQLException {
+        String SQL = "SELECT * FROM user_credentials WHERE email = ?";
+
+        ResultSet resultSet = CrudUtil.execute(SQL, email);
+
+        if(resultSet.next()) {
+            String timeDate = resultSet.getString(6);
+            timeDate = timeDate.replace(' ', 'T');
+            return new UserCredentialsEntity(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    LocalDateTime.parse(timeDate)
+            );
+        }
+        return null;
+    }
 }

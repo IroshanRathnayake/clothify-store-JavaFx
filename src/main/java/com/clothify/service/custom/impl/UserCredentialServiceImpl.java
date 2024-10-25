@@ -62,6 +62,20 @@ public class UserCredentialServiceImpl implements UserCredentialService {
     }
 
     @Override
+    public UserCredentials getUserCredentialsByEmail(String email) {
+        try {
+            UserCredentialsEntity userCredentialEntity = userCredentialDao.findByEmail(email);
+
+            if (userCredentialEntity != null) {
+                return modelMapper.map(userCredentialEntity, UserCredentials.class);
+            }
+        } catch (SQLException e) {
+            CustomAlert.errorAlert("Error Occurred", e);
+        }
+        return null;
+    }
+
+    @Override
     public String getLastUserCredentialId() {
         return userCredentialDao.findLastID();
     }
