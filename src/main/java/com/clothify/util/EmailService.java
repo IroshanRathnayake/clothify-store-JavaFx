@@ -7,8 +7,8 @@ import java.util.Properties;
 import java.util.Random;
 
 public class EmailService {
-    private static final String EMAIL = "work.iroshan@gmail.com";
-    private static final String PASSWORD = "pryw ogjc ifce vujd";
+    private static final String EMAIL = "";
+    private static final String PASSWORD = "";
 
     public String sendOTP(String recipientEmail) {
         String otp = generateOTP();
