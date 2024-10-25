@@ -82,6 +82,25 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public CustomerEntity findById(String id) {
+        String SQL = "SELECT * FROM customer WHERE customer_id=?";
+
+        try {
+            ResultSet resultSet = CrudUtil.execute(SQL, id);
+
+            if(resultSet.next()) {
+                return new CustomerEntity(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6)
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
         return null;
     }
 

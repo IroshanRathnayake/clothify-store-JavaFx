@@ -65,6 +65,16 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Customer getCustomerById(String id) {
+        CustomerEntity customerEntity = customerDao.findById(id);
+
+        if (customerEntity != null) {
+            return modelMapper.map(customerEntity, Customer.class);
+        }
+        return null;
+    }
+
+    @Override
     public String getLastCustomerId() {
         String lastID = customerDao.findLastID();
 

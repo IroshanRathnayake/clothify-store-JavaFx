@@ -1,17 +1,17 @@
 package com.clothify.service.custom;
 
-import com.clothify.dto.Customer;
-import com.clothify.dto.Order;
-import com.clothify.dto.OrderDetail;
-import com.clothify.dto.Product;
+import com.clothify.dto.*;
 import com.clothify.service.SuperService;
+import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public interface OrderService extends SuperService {
     boolean placeOrder(Order order, List<OrderDetail> orderDetails) throws SQLException;
-    Customer getCustomerByPhone(String phone);
-    Product getProductById(String id);
+    ObservableList<Order> getAllOrders();
+    ObservableList<OrderDetail> getOrderDetails(String orderId);
+    Order getOrderById(String id);
     String getLastOrderID();
+    boolean deleteOrder(String orderId);
 }

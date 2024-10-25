@@ -5,10 +5,12 @@ import com.clothify.entity.OrderEntity;
 import com.clothify.repository.custom.OrderDao;
 
 import com.clothify.util.CrudUtil;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -37,12 +39,37 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean delete(String id) {
-        return false;
+        String SQL = "DELETE FROM orders WHERE order_id = ?";
+
+        try {
+            return CrudUtil.execute(SQL,id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public ObservableList<OrderEntity> findAll() {
-        return null;
+        ObservableList<OrderEntity> orderDetailList = FXCollections.observableArrayList();
+
+        try {
+            String SQL = "SELECT * FROM orders";
+            ResultSet resultSet = CrudUtil.execute(SQL);
+
+            while (resultSet.next()) {
+                String timeDate = resultSet.getString(2);
+                timeDate = timeDate.replace(' ', 'T');
+                orderDetailList.add(new OrderEntity(
+                        resultSet.getString(1),
+                        LocalDateTime.parse(timeDate),
+                        resultSet.getString(3),
+                        resultSet.getDouble(4)
+                ));
+            }
+            return orderDetailList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -82,6 +109,28 @@ public class OrderDaoImpl implements OrderDao {
             }
         }
         return true;
+    }
+
+    @Override
+    public ObservableList<OrderDetailEntity> getOrderDetails(String orderId) {
+        ObservableList<OrderDetailEntity> orderDetailList = FXCollections.observableArrayList();
+
+        try {
+            String SQL = "SELECT * FROM order_detail WHERE order_id = ?";
+            ResultSet resultSet = CrudUtil.execute(SQL,orderId);
+
+            while (resultSet.next()) {
+                orderDetailList.add(new OrderDetailEntity(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3),
+                        resultSet.getDouble(4)
+                ));
+            }
+            return orderDetailList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

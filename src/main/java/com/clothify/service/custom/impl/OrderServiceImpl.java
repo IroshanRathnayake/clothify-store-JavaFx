@@ -1,16 +1,16 @@
 package com.clothify.service.custom.impl;
 
 import com.clothify.db.DBConnection;
-import com.clothify.dto.Customer;
 import com.clothify.dto.Order;
 import com.clothify.dto.OrderDetail;
-import com.clothify.dto.Product;
-import com.clothify.entity.OrderDetailEntity;
 import com.clothify.entity.OrderEntity;
+import com.clothify.entity.OrderDetailEntity;
 import com.clothify.repository.DaoFactory;
 import com.clothify.repository.custom.OrderDao;
 import com.clothify.service.custom.OrderService;
 import com.clothify.util.DaoType;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 
 import java.sql.Connection;
@@ -60,15 +60,36 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+
     @Override
-    public Customer getCustomerByPhone(String phone) {
-        return null;
+    public ObservableList<Order> getAllOrders() {
+        List<OrderEntity> orderEntityList = orderDao.findAll();
+
+        ObservableList<Order> orders = FXCollections.observableArrayList();
+        for (OrderEntity entity : orderEntityList) {
+            Order order = modelMapper.map(entity, Order.class);
+            orders.add(order);
+        }
+        return orders;
     }
 
     @Override
-    public Product getProductById(String id) {
+    public ObservableList<OrderDetail> getOrderDetails(String orderId) {
+        List<OrderDetailEntity> orderDetailEntityList = orderDao.getOrderDetails(orderId);
+
+        ObservableList<OrderDetail> orderDetails = FXCollections.observableArrayList();
+        for (OrderDetailEntity entity : orderDetailEntityList) {
+            OrderDetail orderDetail = modelMapper.map(entity, OrderDetail.class);
+            orderDetails.add(orderDetail);
+        }
+        return orderDetails;
+    }
+
+    @Override
+    public Order getOrderById(String id) {
         return null;
     }
+
 
     @Override
     public String getLastOrderID() {
@@ -79,6 +100,11 @@ public class OrderServiceImpl implements OrderService {
         Matcher matcher = pattern.matcher(lastID);
 
         return (matcher.find()) ? matcher.group() : null;
+    }
+
+    @Override
+    public boolean deleteOrder(String orderId) {
+        return orderDao.delete(orderId);
     }
 
 }
