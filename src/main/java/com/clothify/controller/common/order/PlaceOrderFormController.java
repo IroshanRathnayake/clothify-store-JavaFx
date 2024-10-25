@@ -6,6 +6,7 @@ import com.clothify.service.custom.CustomerService;
 import com.clothify.service.custom.OrderService;
 import com.clothify.service.custom.ProductService;
 import com.clothify.util.CustomAlert;
+import com.clothify.util.PDFGenerator;
 import com.clothify.util.ProductType;
 import com.clothify.util.ServiceType;
 import com.jfoenix.controls.JFXButton;
@@ -192,6 +193,11 @@ public class PlaceOrderFormController implements Initializable {
                 );
                 clearAll();
                 generateNextID();
+                ObservableList<OrderDetail> orderDetailObservableList = FXCollections.observableArrayList();
+                orderDetailObservableList.addAll(orderDetails);
+
+                PDFGenerator pdfGenerator = new PDFGenerator();
+                pdfGenerator.downloadPdf((Stage) btnPlaceOrder.getScene().getWindow(), orderDetailObservableList);
             } else {
                 CustomAlert.showAlert(
                         Alert.AlertType.WARNING,

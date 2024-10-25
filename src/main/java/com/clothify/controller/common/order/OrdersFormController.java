@@ -125,10 +125,8 @@ public class OrdersFormController implements Initializable {
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
-        String filePath = "OrderDetails.pdf";
-
         PDFGenerator pdfGenerator = new PDFGenerator();
-        pdfGenerator.downloadOrderDetailsPdf((Stage) btnPrint.getScene().getWindow(), allOrders);
+        pdfGenerator.downloadPdf((Stage) btnPrint.getScene().getWindow(), allOrders);
     }
 
     @FXML

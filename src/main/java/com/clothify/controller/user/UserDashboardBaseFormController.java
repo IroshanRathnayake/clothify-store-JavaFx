@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class UserDashboardBaseFormController implements Initializable {
@@ -26,7 +29,7 @@ public class UserDashboardBaseFormController implements Initializable {
     private JFXButton btnDashboard;
 
     @FXML
-    private JFXButton btnInventory;
+    private JFXButton btnReturn;
 
     @FXML
     private JFXButton btnLogout;
@@ -51,7 +54,7 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonList = Arrays.asList(btnDashboard, btnPlaceOrder, btnCustomer, btnOrders, btnProduct, btnInventory, btnSettings);
+        buttonList = Arrays.asList(btnDashboard, btnPlaceOrder, btnCustomer, btnOrders, btnProduct, btnReturn, btnSettings);
         changeTheButtonStyle(btnDashboard);
         loadContent("view/user/dashboard/user_dashboard_from.fxml");
     }
@@ -68,14 +71,14 @@ public class UserDashboardBaseFormController implements Initializable {
     }
 
     @FXML
-    void btnInventoryOnAction(ActionEvent event) {
-        changeTheButtonStyle(btnInventory);
-        loadContent("view/common/product/inventory_form.fxml");
+    void btnReturnOnAction(ActionEvent event) {
+        changeTheButtonStyle(btnReturn);
+        loadContent("view/common/order/return_order_form.fxml");
     }
 
     @FXML
     void btnLogoutOnAction(ActionEvent event) {
-
+        logout();
     }
 
     @FXML
@@ -108,18 +111,7 @@ public class UserDashboardBaseFormController implements Initializable {
 
     @FXML
     void menubarLogoutOnAction(ActionEvent event) {
-        Stage stage = new Stage();
-        try {
-            stage.setScene(new Scene(
-                    FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
-            stage.setTitle("Login");
-            stage.setResizable(false);
-            stage.getIcons().add(new Image("img/logo-round.png"));
-            stage.show();
-            btnDashboard.getScene().getWindow().hide();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        logout();
     }
 
     //Custom Methods
@@ -139,6 +131,29 @@ public class UserDashboardBaseFormController implements Initializable {
             mainBorderPane.setCenter(content);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    //Logout Action
+    private void logout() {
+
+        Alert logoutAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        logoutAlert.setTitle("Cothify Store");
+        logoutAlert.setContentText("Do you want to logout?");
+        Optional<ButtonType> buttonType = logoutAlert.showAndWait();
+        if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
+            Stage stage = new Stage();
+            try {
+                stage.setScene(new Scene(
+                        FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
+                stage.setTitle("Login");
+                stage.setResizable(false);
+                stage.getIcons().add(new Image("img/logo-round.png"));
+                stage.show();
+                btnDashboard.getScene().getWindow().hide();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

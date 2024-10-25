@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="895.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothify.controller.admin.dashboard.AdminDashboardFormController">
@@ -17,7 +18,7 @@
             <Font name="Verdana" size="31.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="50.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="50.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Today">
                <font>
@@ -39,7 +40,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="370.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="370.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Stocks">
                <font>
@@ -61,7 +62,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="689.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="689.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Customers">
                <font>
@@ -73,7 +74,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/People.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="1256">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="51">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -83,7 +84,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1011.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="1011.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Employees">
                <font>
@@ -95,7 +96,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/Member.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="37">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="12">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -129,6 +130,41 @@
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
             </Label>
+            <AnchorPane layoutX="14.0" layoutY="61.0" prefHeight="177.0" prefWidth="579.0" style="-fx-background-color: #C4E3FF; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="147.0" fitWidth="148.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/product/Leather%20Jacket.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="169.0" layoutY="57.0" opacity="0.7" styleClass="body-font" stylesheets="@../../../css/font.css" text="Leather Jacket">
+                     <font>
+                        <Font name="SansSerif Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="81.0" opacity="0.7" styleClass="path-font" stylesheets="@../../../css/font.css" text="LKR 8900.00" textFill="#308edf">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="147.0" fitWidth="148.0" layoutX="308.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/product/Summer%20Skirt.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="448.0" layoutY="58.0" opacity="0.7" styleClass="body-font" stylesheets="@../../../css/font.css" text="Summer Skirt">
+                     <font>
+                        <Font name="SansSerif Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="448.0" layoutY="82.0" opacity="0.7" styleClass="path-font" stylesheets="@../../../css/font.css" text="LKR 2400.00" textFill="#308edf">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-100.00006103515625" endY="145.66668701171875" layoutX="404.0" layoutY="17.0" opacity="0.3" startX="-100.00006103515625" startY="-5.66668701171875" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="689.0" layoutY="610.0" prefHeight="251.0" prefWidth="607.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
@@ -138,6 +174,41 @@
                   <Font name="SansSerif Bold" size="22.0" />
                </font>
             </Label>
+            <AnchorPane layoutX="14.0" layoutY="52.0" prefHeight="177.0" prefWidth="579.0" style="-fx-background-color: #C4E3FF; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="147.0" fitWidth="148.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/product/Winter%20Jacket.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="169.0" layoutY="57.0" opacity="0.7" styleClass="body-font" stylesheets="@../../../css/font.css" text="Winter Jacket">
+                     <font>
+                        <Font name="SansSerif Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="81.0" opacity="0.7" styleClass="path-font" stylesheets="@../../../css/font.css" text="LKR 5500.00" textFill="#308edf">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="147.0" fitWidth="148.0" layoutX="322.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/product/Evening%20Gown.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="448.0" layoutY="58.0" opacity="0.7" styleClass="body-font" stylesheets="@../../../css/font.css" text="Evening Gown">
+                     <font>
+                        <Font name="SansSerif Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="448.0" layoutY="82.0" opacity="0.7" styleClass="path-font" stylesheets="@../../../css/font.css" text="LKR 6800.00" textFill="#308edf">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-100.00006103515625" endY="143.0" layoutX="405.0" layoutY="17.0" opacity="0.3" startX="-100.00006103515625" startY="-5.66668701171875" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <Label layoutX="1178.0" layoutY="23.0" opacity="0.5" styleClass="path-font" stylesheets="@../../../css/font.css" text="Home / Dashboard">

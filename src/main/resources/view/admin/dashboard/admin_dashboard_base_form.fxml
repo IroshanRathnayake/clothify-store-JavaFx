@@ -125,14 +125,14 @@
                   <Insets right="25.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnInventory" layoutX="31.0" layoutY="499.0" onAction="#btnInventoryOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Inventory" textFill="#308edf">
+            <JFXButton fx:id="btnReturn" layoutX="23.0" layoutY="501.0" onAction="#btnReturnOnAction" prefHeight="47.0" prefWidth="185.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20;" styleClass="dashboard-button-font" stylesheets="@../../../css/font.css" text="Return" textFill="#308edf">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../img/icon/dashboard-icon/Sell%20Stock.png" />
+                        <Image url="@../../../img/icon/dashboard-icon/Return.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -241,7 +241,7 @@
                         </ImageView>
                         <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1220.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../img/icon/dashboard-icon/Ellipse%201.png" />
+                              <Image url="@../../../img/icon/employee/star-men.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />

@@ -17,7 +17,7 @@
             <Font name="Verdana" size="31.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="53.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="53.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Today">
                <font>
@@ -39,7 +39,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="373.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="373.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Stocks">
                <font>
@@ -61,7 +61,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="692.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="692.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Customers">
                <font>
@@ -73,7 +73,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/People.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="1256">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="51">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
@@ -83,7 +83,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1014.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #ffffff;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
+      <AnchorPane layoutX="1014.0" layoutY="80.0" prefHeight="189.0" prefWidth="285.0" style="-fx-background-color: #C4E3FF;" styleClass="highlight-card" stylesheets="@../../../css/anchor-pane.css">
          <children>
             <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" stylesheets="@../../../css/font.css" text="Employees">
                <font>
@@ -95,7 +95,7 @@
                   <Image url="@../../../img/icon/dashboard-icon/Member.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="37">
+            <Label layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" stylesheets="@../../../css/font.css" text="12">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
